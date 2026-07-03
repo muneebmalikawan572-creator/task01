@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catchhub — Watch. Communicate. Create.</title>
+    <link rel="icon" type="image/jpeg" href="images/favicon.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Yellowtail&display=swap"
+        rel="stylesheet">
+    <style>
+
+         
+
+:root{
+    --orange:#e6532d;
+    --dark:#222;
+    --gray:#777;
+    --light:#f7f7f7;
+    --container:1180px;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    overflow-x:hidden;
+    background:#fff;
+    color:#222;
+    -webkit-font-smoothing:antialiased;
+}
+
+img{
+    display:block;
+    max-width:100%;
+}
+
+.container{
+    width:100%;
+    max-width:1180px;
+    margin:auto;
+    padding:0 40px;
+    position:relative;
+    z-index:2;
+}
+
+
+/*==================================================
+            BACKGROUND SHAPES
+==================================================*/
+
+.hero,
+.feature{
+    position:relative;
+    overflow:hidden;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    top:-180px;
+    right:-250px;
+
+    width:900px;
+    height:900px;
+
+    background:linear-gradient(145deg,#ececec,#ffffff);
+
+    transform:rotate(30deg);
+
+    border-radius:80px;
+
+    z-index:0;
+}
+
+.hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:-350px;
+
+    top:-200px;
+
+    width:650px;
+
+    height:650px;
+
+    background:#f3f3f3;
+
+    transform:rotate(-30deg);
+
+    z-index:0;
+}
+
+
+/* Channels */
+
+.feature--channels::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:-400px;
+
+    bottom:-250px;
+
+    width:900px;
+
+    height:900px;
+
+    background:linear-gradient(135deg,#efefef,#ffffff);
+
+    transform:rotate(35deg);
+
+    z-index:0;
+
+}
+
+
+/* Messages */
+
+.feature--messages::before{
+
+    content:"";
+
+    position:absolute;
+
+    right:-400px;
+
+    top:-200px;
+
+    width:900px;
+
+    height:900px;
+
+    background:linear-gradient(140deg,#efefef,#ffffff);
+
+    transform:rotate(-35deg);
+
+    z-index:0;
+
+}
+
+
+/* Future */
+
+.feature--future::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:-350px;
+
+    top:-150px;
+
+    width:850px;
+
+    height:850px;
+
+    background:linear-gradient(145deg,#efefef,#ffffff);
+
+    transform:rotate(35deg);
+
+    z-index:0;
+
+}
+
+ 
+
+.hero{
+
+    padding:100px 0 90px;
+
+}
+
+.hero__inner{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:80px;
+
+    position:relative;
+
+    z-index:3;
+
+}
+
+.hero__content{
+
+    max-width:470px;
+
+}
+
+.hero__logo{
+
+    width:250px;
+
+    margin-bottom:25px;
+
+}
+
+.hero__tagline{
+
+    font-size:30px;
+
+    font-weight:700;
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+    color:#222;
+
+}
+
+.hero__subtitle{
+
+    margin-top:12px;
+
+    font-size:18px;
+
+    color:#888;
+
+    line-height:1.7;
+
+}
+
+.store-badges{
+
+    display:flex;
+
+    gap:18px;
+
+    margin-top:40px;
+
+}
+
+.store-badge img{
+
+    height:52px;
+
+    transition:.3s;
+
+}
+
+.store-badge:hover img{
+
+    transform:translateY(-5px);
+
+}
+
+.hero__art{
+
+    width:560px;
+
+}
+
+.hero__art img{
+
+    filter:drop-shadow(0 25px 45px rgba(0,0,0,.18));
+
+}
+
+ 
+
+.feature{
+
+    padding:120px 0;
+
+}
+
+.feature__inner{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:100px;
+
+    position:relative;
+
+    z-index:3;
+
+}
+
+.feature__inner--reverse{
+
+    flex-direction:row-reverse;
+
+}
+
+.feature__art{
+
+    flex:1;
+
+}
+
+.feature__art img{
+
+    width:420px;
+
+    margin:auto;
+
+    filter:drop-shadow(0 30px 40px rgba(0,0,0,.15));
+
+}
+
+.feature__content{
+
+    flex:1;
+
+    text-align:center;
+
+}
+
+.feature__title{
+
+    font-size:36px;
+
+    letter-spacing:8px;
+
+    font-weight:700;
+
+    text-transform:uppercase;
+
+    margin-bottom:30px;
+
+}
+
+.feature__text{
+
+    font-size:22px;
+
+    color:#888;
+
+    line-height:1.8;
+
+    font-weight:300;
+
+}
+
+
+/*==================================================
+            ICON STRIP
+==================================================*/
+
+.icon-strip{
+
+    padding:40px 0;
+
+    text-align:center;
+
+}
+
+.icon-strip img{
+
+    width:700px;
+
+    opacity:.35;
+
+    margin:auto;
+
+}
+
+
+/*==================================================
+                FOOTER
+==================================================*/
+
+.footer{
+
+    padding:90px 0 70px;
+
+    background:#fafafa;
+
+    text-align:center;
+
+}
+
+.footer__label{
+
+    font-size:24px;
+
+    margin-bottom:30px;
+
+}
+
+.footer .store-badges{
+
+    justify-content:center;
+
+    margin-bottom:45px;
+
+}
+
+.footer__contact{
+
+    color:#777;
+
+    font-size:18px;
+
+    margin-bottom:45px;
+
+}
+
+.footer__link{
+
+    color:#2f6fed;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+}
+
+.footer__link:hover{
+
+    text-decoration:underline;
+
+}
+
+.footer__brand img{
+
+    width:55px;
+
+    opacity:.9;
+
+    margin:auto;
+
+}
+
+
+/*==================================================
+            PHONE FLOAT EFFECT
+==================================================*/
+
+.hero__art img,
+.feature__art img{
+
+    animation:float 6s ease-in-out infinite;
+
+}
+
+@keyframes float{
+
+0%{
+
+transform:translateY(0px);
+
+}
+
+50%{
+
+transform:translateY(-12px);
+
+}
+
+100%{
+
+transform:translateY(0px);
+
+}
+
+}
+
+
+/*==================================================
+            RESPONSIVE
+==================================================*/
+
+@media(max-width:991px){
+
+.hero__inner,
+
+.feature__inner,
+
+.feature__inner--reverse{
+
+flex-direction:column;
+
+text-align:center;
+
+gap:60px;
+
+}
+
+.hero__content{
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+}
+
+.store-badges{
+
+justify-content:center;
+
+}
+
+.hero__art{
+
+width:100%;
+
+}
+
+.feature{
+
+padding:80px 0;
+
+}
+
+.feature__title{
+
+font-size:30px;
+
+}
+
+.feature__text{
+
+font-size:18px;
+
+}
+
+}
+
+@media(max-width:600px){
+
+.container{
+
+padding:0 22px;
+
+}
+
+.hero{
+
+padding-top:60px;
+
+}
+
+.hero__logo{
+
+width:190px;
+
+}
+
+.hero__tagline{
+
+font-size:22px;
+
+letter-spacing:2px;
+
+}
+
+.hero__subtitle{
+
+font-size:15px;
+
+}
+
+.store-badge img{
+
+height:46px;
+
+}
+
+.feature__title{
+
+font-size:24px;
+
+letter-spacing:4px;
+
+}
+
+.feature__text{
+
+font-size:16px;
+
+}
+
+.icon-strip img{
+
+width:100%;
+
+}
+
+}
+    </style>
+</head>
+
+<body>
+
+     <header class="hero">
+        <div class="bg-shape bg-shape--hero"></div>
+        <div class="container hero__inner">
+            <div class="hero__content">
+                <img class="hero__logo" src="images/logo.png" alt="Catchhub logo">
+                <h1 class="hero__tagline">Watch. Communicate. Create.</h1>
+                <p class="hero__subtitle">Everything you need to socialise</p>
+                <div class="store-badges">
+                    <a href="#" class="store-badge"><img src="images/play_store.png"
+                            alt="Available on the Play Store"></a>
+                    <a href="#" class="store-badge"><img src="images/app_store.png" alt="Download on the App Store"></a>
+                </div>
+            </div>
+            <div class="hero__art">
+                <img src="images/top_screens.png" alt="Catchhub app screens showing channels feed">
+            </div>
+        </div>
+    </header>
+
+     <section class="feature feature--channels">
+        <div class="container feature__inner">
+            <div class="feature__art">
+                <img src="images/for_screens.png" alt="Catchhub channels screens">
+            </div>
+            <div class="feature__content">
+                <h2 class="feature__title">Channels</h2>
+                <p class="feature__text">
+                    Enjoy the videos and music you love.
+                    Create your own business
+                    or entertainment channel.
+                </p>
+            </div>
+        </div>
+        <div class="bg-shape bg-shape--channels"></div>
+    </section>
+
+     <section class="feature feature--messages">
+        <div class="bg-shape bg-shape--messages"></div>
+        <div class="container feature__inner feature__inner--reverse">
+            <div class="feature__content">
+                <h2 class="feature__title">Messages</h2>
+                <p class="feature__text">
+                    Communicate seamlessly.
+                    Create your own professional
+                    or social group chat
+                </p>
+            </div>
+            <div class="feature__art">
+                <img src="images/sec_screens.png" alt="Catchhub messages screens">
+            </div>
+        </div>
+    </section>
+
+     <section class="icon-strip">
+        <div class="container">
+            <img src="images/vectors.png" alt="Events, Party, Menu, Cats, Housing, News categories">
+        </div>
+    </section>
+
+     <section class="feature feature--future">
+        <div class="container feature__inner">
+            <div class="feature__art">
+                <img src="images/thhh_screens.png" alt="Catchhub upcoming features screens">
+            </div>
+            <div class="feature__content">
+                <h2 class="feature__title">In future</h2>
+                <p class="feature__text">
+                    Communicate seamlessly.
+                    Create your own professional
+                    or social group chat
+                </p>
+            </div>
+        </div>
+        <div class="bg-shape bg-shape--future"></div>
+    </section>
+
+     <footer class="footer">
+        <div class="container footer__inner">
+            <p class="footer__label">For download click here:</p>
+            <div class="store-badges">
+                <a href="#" class="store-badge"><img src="images/play_store.png" alt="Available on the Play Store"></a>
+                <a href="#" class="store-badge"><img src="images/app_store.png" alt="Download on the App Store"></a>
+            </div>
+            <p class="footer__contact">Any questions? Feel free to <a href="#" class="footer__link">CONTACT US</a></p>
+            <div class="footer__brand">
+                <img src="images/peratude.png" alt="Peratude">
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
